@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  nginx:
+    image: my_nginx:latest
+    container_name: my_nginx_container
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - nginx-network
+    depends_on:
+      - app
+
+  app:
+    # Replace 'YOUR_DOCKERIZED_APP_IMAGE' with your actual app's Docker image name
+    image: app:latest
+    container_name: my_app_container
+    restart: always
+    networks:
+      - nginx-network
+    
+networks:
+  nginx-network:
+    driver: bridge
