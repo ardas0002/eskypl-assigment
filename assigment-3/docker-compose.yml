@@ -2,20 +2,26 @@ version: "3"
 
 services:
   nginx:
-    image: my_nginx:latest
-    container_name: my_nginx_container
+    build:
+      context: .
+      dockerfile: Dockerfile  
+    container_name: nginx
+    image: nginx:latest
     restart: always
     ports:
       - "8080:80"
+      - "9001:9001"
     networks:
       - nginx-network
     depends_on:
       - app
 
   app:
-    # Replace 'YOUR_DOCKERIZED_APP_IMAGE' with your actual app's Docker image name
+    build:
+      context: ../assigment-2
+      dockerfile: Dockerfile
     image: app:latest
-    container_name: my_app_container
+    container_name: app
     restart: always
     networks:
       - nginx-network

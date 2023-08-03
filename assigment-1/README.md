@@ -15,3 +15,12 @@ ADDRESS              REQUESTS
 * Add to script option called "--user-agent", that allows restricting parsing of logs only to providded user agent.
 * Add to script option called "--method", that prints in output number of request per method/address instead of just per address.
 * Script should remove extracted files even in case of error.
+
+### Instruction
+To run script with two options you need to provide --method first then --user-agent.
+Example:
+./script.sh --method --user-agent="Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+
+To run script with one option the order doesn't matter.
+
+!!Logs archive was deleted from repository because of large files limit in repository!!

@@ -28,3 +28,8 @@ Task is to create a script called `script.sh`, that will build and run this app 
 * Add to script option called "--port", that allows specifying different port.
 * Add to script option called "--healthcheck", that will check, if container is running.
 * There is no shell in built image
+
+### Instruction
+To run script with two options you need to provide --port first than --health.
+Example:
+./script.sh --port=8082 --health
